@@ -1,0 +1,9 @@
+{
+  "layout:zh-cn": {
+    "cmd-p": "mod.open:zh-cn-picker",
+    "cmd-shift-p": "mod.open:zh-cn-palette",
+    "cmd-,": "mod.open:zh-cn-settings",
+    "cmd-/": "mod.open:zh-cn-help",
+    "cmd-shift-/": "mod.open:zh-cn-help"
+  }
+}

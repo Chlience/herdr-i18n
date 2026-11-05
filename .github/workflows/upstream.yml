@@ -1,0 +1,28 @@
+name: Watch herdr-app releases
+on:
+  schedule:
+    - cron: '23 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GITHUB_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Open an issue when a new release needs translating
+        run: |
+          latest=v$(curl -fsSL https://releases.herdr.dev/app/latest.json | jq -r .version)
+          pinned=$(jq -r .tag upstream.json)
+          [ "$latest" = "$pinned" ] && exit 0
+          title="Update to herdr-app $latest"
+          [ -n "$(gh issue list --state open --search "\"$title\" in:title" --json number --jq '.[].number')" ] && exit 0
+          python3 tools/i18n.py upgrade "$latest" > report.txt 2>&1 || true
+          { echo "Pinned: $pinned. Latest: $latest."; echo; echo '```'; cat report.txt; echo '```'; } > body.md
+          gh issue create --title "$title" --body-file body.md

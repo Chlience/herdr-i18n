@@ -1,0 +1,28 @@
+{
+  "repository": "herdrdev/herdr-app",
+  "tag": "v0.1.13",
+  "commit": "93b097f6e29fcb2d90a30dea2f03ce4e5dee7981",
+  "mods": [
+    "workspace-chrome", "workspace-status", "spaces", "agents", "tabs", "pane",
+    "files", "changes", "new-menu", "menu", "machine-add", "worktree", "picker",
+    "prompt", "confirm", "help", "peek"
+  ],
+  "frames": ["settings", "palette", "welcome", "feedback", "whatsnew"],
+  "screens": {
+    "settings": { "kind": "dialog", "width": 880 },
+    "palette": { "kind": "popup", "at": "top", "offset": 60, "width": 620, "height": 0.85 },
+    "help": { "kind": "dialog", "width": 640, "height": 520 },
+    "welcome": { "kind": "window", "width": 660, "height": 600 },
+    "feedback": { "kind": "window", "key": "feedback", "width": 680 },
+    "whatsnew": { "kind": "window", "width": 880, "height": 760 }
+  },
+  "keys": {
+    "app.settings": "settings",
+    "app.palette": "palette",
+    "app.help": "help"
+  },
+  "patches": [
+    { "file": "settings/main.js", "find": "const LOOKS = {", "replace": "const LOOKS = { \"{layout}\": {title}," },
+    { "file": "palette/main.js", "find": "{ main: \"Herdr\",", "replace": "{ \"{layout}\": {title}, main: \"Herdr\"," }
+  ]
+}

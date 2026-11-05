@@ -1,0 +1,138 @@
+{
+  "ignore": [
+    "Darwin",
+    "cannot start sh: program not found",
+    "Geist",
+    "JetBrains Mono",
+    "Herdr",
+    "Herdr 98",
+    "Herdr ${u.app.version}",
+    "for f in $1; do [ -f \"$f\" ] && printf \"%s\\n\" \"$f\"; done",
+    "n=0; for p in \"$1\"/* \"$1\"/.[!.]* \"$1\"/..?*; do [ -e \"$p\" ] || [ -L \"$p\" ] || continue; name=${p##*/}; [ \"$name\" = .git ] && continue; if [ -d \"$p\" ]; then kind=d; else kind=f; fi; printf \"%s\\0%s\\0\" \"$kind\" \"$name\"; n=$((n+1)); [ \"$n\" -gt 500 ] && break; done; test -d \"$1\"",
+    "printf %s \"$HOME\"",
+    "uname; command -v herdr-core || echo \"$HOME/.local/bin/herdr-core\"",
+    "HEAD:${record.slice(at + 1)}"
+  ],
+  "include": [
+    {
+      "file": "help/main.js",
+      "text": "spaces"
+    },
+    {
+      "file": "help/main.js",
+      "text": "tabs"
+    },
+    {
+      "file": "help/main.js",
+      "text": "panes"
+    },
+    {
+      "file": "help/main.js",
+      "text": "agents"
+    },
+    {
+      "file": "help/main.js",
+      "text": "terminal"
+    },
+    {
+      "file": "help/main.js",
+      "text": "window"
+    },
+    {
+      "file": "help/main.js",
+      "text": "type "
+    },
+    {
+      "file": "settings/release-notes.js",
+      "text": "${months[Number(month) - 1]} ${Number(day)}"
+    },
+    {
+      "file": "whatsnew/release-notes.js",
+      "text": "${months[Number(month) - 1]} ${Number(day)}"
+    },
+    {
+      "file": "welcome/main.js",
+      "text": "BETA"
+    },
+    {
+      "file": "workspace-status/main.js",
+      "text": "commands"
+    },
+    {
+      "file": "worktree/main.js",
+      "text": "${Math.max(1, Math.round(d / 60))}m"
+    },
+    {
+      "file": "worktree/main.js",
+      "text": "${Math.round(d / 3600)}h"
+    },
+    {
+      "file": "worktree/main.js",
+      "text": "${Math.round(d / 86400)}d"
+    },
+    {
+      "file": "worktree/main.js",
+      "text": "${Math.round(d / 86400 / 30)}mo"
+    },
+    {
+      "file": "agents/main.js",
+      "text": "${m}m"
+    },
+    {
+      "file": "agents/main.js",
+      "text": "${h}h"
+    },
+    {
+      "file": "agents/main.js",
+      "text": "${Math.floor(h / 24)}d"
+    },
+    {
+      "file": "agents/main.js",
+      "text": "<1m"
+    },
+    {
+      "file": "peek/main.js",
+      "text": "working"
+    },
+    {
+      "file": "peek/main.js",
+      "text": "finished"
+    },
+    {
+      "file": "peek/main.js",
+      "text": "idle"
+    },
+    {
+      "file": "picker/main.js",
+      "text": "finished"
+    },
+    {
+      "file": "picker/main.js",
+      "text": "agent"
+    },
+    {
+      "file": "worktree/main.js",
+      "text": "open"
+    },
+    {
+      "file": "welcome/main.js",
+      "text": "here"
+    },
+    {
+      "file": "welcome/main.js",
+      "text": "connected"
+    },
+    {
+      "file": "welcome/main.js",
+      "text": "offline"
+    },
+    {
+      "file": "spaces/main.js",
+      "text": "asleep"
+    },
+    {
+      "file": "settings/main.js",
+      "text": "unknown"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "layout:zh-cn": {
+    "ctrl-?": "mod.open:zh-cn-help",
+    "ctrl-shift-/": "mod.open:zh-cn-help",
+    "ctrl-shift-?": "mod.open:zh-cn-help",
+    "ctrl-shift-k": "mod.open:zh-cn-picker",
+    "ctrl-shift-p": "mod.open:zh-cn-palette",
+    "ctrl-,": "mod.open:zh-cn-settings"
+  }
+}

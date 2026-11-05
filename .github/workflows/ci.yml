@@ -1,0 +1,26 @@
+name: CI
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 tools/i18n.py fetch
+      - name: Catalogs have no broken translations
+        run: python3 tools/i18n.py check
+      - name: Tests, including that builds change only text
+        run: python3 -m unittest discover -b -s tools
+      - name: strings.json and builds are committed
+        run: |
+          python3 tools/i18n.py extract
+          python3 tools/i18n.py build
+          git status --porcelain
+          test -z "$(git status --porcelain)"

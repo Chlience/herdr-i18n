@@ -1,0 +1,9 @@
+{
+  "place": "none",
+  "title": "发送反馈",
+  "overlay": {
+    "kind": "window",
+    "key": "feedback",
+    "width": 680
+  }
+}

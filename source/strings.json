@@ -1,0 +1,1411 @@
+{
+  "upstream": {
+    "tag": "v0.1.13",
+    "commit": "93b097f6e29fcb2d90a30dea2f03ce4e5dee7981"
+  },
+  "literals": {
+    "\n… (file truncated)": [
+      "files/main.js:142"
+    ],
+    "<1m": [
+      "agents/main.js:65"
+    ],
+    "A VPS, a Mac mini, a box at home: Herdr reaches it over ssh, and agents there keep running while your laptop sleeps.": [
+      "machine-add/main.js:325"
+    ],
+    "A build from source: it updates with git, not here.": [
+      "settings/main.js:720"
+    ],
+    "A draft: it changes until the day ends (UTC), then goes out once.": [
+      "settings/main.js:810"
+    ],
+    "A ring while one works, “Needs you” when it asks something, a sound when it finishes.": [
+      "welcome/main.js:288"
+    ],
+    "A server or a Mac mini runs its own herdr-core, so its agents keep going even while this laptop sleeps.": [
+      "welcome/main.js:290"
+    ],
+    "Add": [
+      "machine-add/main.js:282",
+      "machine-add/main.js:374"
+    ],
+    "Add a machine": [
+      "machine-add/mod.json:1",
+      "machine-add/main.js:318",
+      "settings/main.js:665",
+      "welcome/main.js:338"
+    ],
+    "Add machine": [
+      "workspace-chrome/main.js:43"
+    ],
+    "Add screenshot": [
+      "feedback/main.js:56"
+    ],
+    "Add your other machines": [
+      "welcome/main.js:314"
+    ],
+    "Added": [
+      "machine-add/main.js:262"
+    ],
+    "Agent": [
+      "palette/main.js:20",
+      "palette/main.js:48",
+      "palette/main.js:49"
+    ],
+    "Agents": [
+      "agents/mod.json:1",
+      "agents/main.js:426"
+    ],
+    "Agents can start helpers": [
+      "welcome/main.js:289"
+    ],
+    "Agents tell you when they need you": [
+      "welcome/main.js:288"
+    ],
+    "Alerts": [
+      "settings/main.js:13"
+    ],
+    "Also fixed": [
+      "settings/release-notes.js:33",
+      "whatsnew/release-notes.js:33"
+    ],
+    "Alt": [
+      "new-menu/main.js:12",
+      "settings/main.js:514"
+    ],
+    "Alt+": [
+      "workspace-status/main.js:10",
+      "workspace-status/main.js:10"
+    ],
+    "An agent finished": [
+      "settings/main.js:686"
+    ],
+    "An agent needs you": [
+      "settings/main.js:685"
+    ],
+    "App": [
+      "palette/main.js:20",
+      "palette/main.js:53",
+      "palette/main.js:54",
+      "palette/main.js:55",
+      "palette/main.js:56",
+      "palette/main.js:57",
+      "palette/main.js:58",
+      "palette/main.js:59",
+      "palette/main.js:60",
+      "palette/main.js:61",
+      "palette/main.js:62"
+    ],
+    "Appearance": [
+      "settings/main.js:487",
+      "welcome/main.js:292"
+    ],
+    "Apr": [
+      "settings/release-notes.js:7",
+      "whatsnew/release-notes.js:7"
+    ],
+    "Are you sure?": [
+      "confirm/main.js:41"
+    ],
+    "Ask your agent for a board of your agents, your pull requests, a cost meter, or the sidebar on the right. Not sure what's possible? Ask it that too.": [
+      "welcome/main.js:407"
+    ],
+    "Aug": [
+      "settings/release-notes.js:7",
+      "whatsnew/release-notes.js:7"
+    ],
+    "Automatic (Alt on US keyboards)": [
+      "settings/main.js:513"
+    ],
+    "BETA": [
+      "welcome/main.js:500"
+    ],
+    "Back": [
+      "welcome/main.js:550"
+    ],
+    "Binary file changed": [
+      "changes/main.js:129"
+    ],
+    "Binary file · no text diff": [
+      "changes/main.js:120"
+    ],
+    "Binary file · no text preview": [
+      "files/main.js:139"
+    ],
+    "Cancel": [
+      "prompt/main.js:47",
+      "confirm/main.js:48",
+      "settings/main.js:640",
+      "feedback/main.js:111"
+    ],
+    "Cannot list this folder": [
+      "files/main.js:23",
+      "files/main.js:35"
+    ],
+    "Cannot preview this diff (too large or unreadable)": [
+      "changes/main.js:106"
+    ],
+    "Cannot preview this file (binary, too large, or unreadable)": [
+      "files/main.js:145",
+      "changes/main.js:119"
+    ],
+    "Changes": [
+      "tabs/main.js:98",
+      "changes/main.js:184",
+      "welcome/main.js:20"
+    ],
+    "Check now": [
+      "settings/main.js:712"
+    ],
+    "Checking installed agents…": [
+      "new-menu/main.js:67"
+    ],
+    "Checking…": [
+      "settings/main.js:699",
+      "settings/main.js:709"
+    ],
+    "Choose your panels": [
+      "welcome/main.js:398"
+    ],
+    "Close": [
+      "menu/main.js:54",
+      "menu/main.js:61"
+    ],
+    "Close pane": [
+      "menu/main.js:47",
+      "palette/main.js:32"
+    ],
+    "Close space": [
+      "palette/main.js:38"
+    ],
+    "Close tab": [
+      "palette/main.js:27"
+    ],
+    "Close window": [
+      "palette/main.js:52"
+    ],
+    "Coming from herdr?": [
+      "welcome/main.js:274"
+    ],
+    "Command palette": [
+      "palette/mod.json:1"
+    ],
+    "Commit": [
+      "changes/main.js:204"
+    ],
+    "Commit message": [
+      "changes/main.js:34"
+    ],
+    "Committing…": [
+      "changes/main.js:204"
+    ],
+    "Confirm": [
+      "confirm/main.js:49"
+    ],
+    "Connect": [
+      "spaces/main.js:334"
+    ],
+    "Connecting": [
+      "machine-add/main.js:264"
+    ],
+    "Connecting…": [
+      "spaces/main.js:334"
+    ],
+    "Copied": [
+      "welcome/main.js:256"
+    ],
+    "Copy": [
+      "palette/main.js:46",
+      "welcome/main.js:256"
+    ],
+    "Copying this computer's herdr-core. Its terminals keep running.": [
+      "settings/main.js:638"
+    ],
+    "Could not find the remote home folder.": [
+      "worktree/main.js:138"
+    ],
+    "Could not load agents": [
+      "new-menu/main.js:67"
+    ],
+    "Couldn't connect.": [
+      "spaces/main.js:150"
+    ],
+    "Couldn't open a terminal for it. Run `hc machine add ": [
+      "machine-add/main.js:201"
+    ],
+    "Couldn't read machines.": [
+      "settings/main.js:547",
+      "settings/main.js:549"
+    ],
+    "Ctrl": [
+      "new-menu/main.js:12"
+    ],
+    "Ctrl+": [
+      "workspace-status/main.js:10",
+      "workspace-status/main.js:10"
+    ],
+    "Dark": [
+      "settings/main.js:22",
+      "settings/main.js:489",
+      "welcome/main.js:15"
+    ],
+    "Dec": [
+      "settings/release-notes.js:7",
+      "whatsnew/release-notes.js:7"
+    ],
+    "Done": [
+      "agents/main.js:60",
+      "welcome/main.js:554",
+      "feedback/main.js:111"
+    ],
+    "Drafted by an agent: read it before sending": [
+      "feedback/main.js:98"
+    ],
+    "Drag to move": [
+      "welcome/main.js:502"
+    ],
+    "Duplicate layout": [
+      "palette/main.js:43"
+    ],
+    "Duplicate mod": [
+      "palette/main.js:44",
+      "palette/main.js:157"
+    ],
+    "Email (optional)": [
+      "feedback/main.js:10"
+    ],
+    "Email: only if you want a reply": [
+      "feedback/main.js:104"
+    ],
+    "Esc": [
+      "machine-add/main.js:318",
+      "picker/main.js:241",
+      "prompt/main.js:42",
+      "confirm/main.js:41",
+      "help/main.js:61",
+      "palette/main.js:299"
+    ],
+    "Every part of this window is a layout or a mod: plain files your agent can change or add to. Give it this line to start:": [
+      "welcome/main.js:436"
+    ],
+    "Everything: terminals, panels, text.": [
+      "settings/main.js:499"
+    ],
+    "Exactly what leaves your computer, word for word.": [
+      "settings/main.js:799"
+    ],
+    "Feb": [
+      "settings/release-notes.js:7",
+      "whatsnew/release-notes.js:7"
+    ],
+    "File list limited to 500 entries per folder and 5,000 total": [
+      "files/main.js:176"
+    ],
+    "Files": [
+      "tabs/main.js:97",
+      "files/main.js:172",
+      "welcome/main.js:19"
+    ],
+    "Fn": [
+      "new-menu/main.js:12"
+    ],
+    "For the layout you're in: each layout keeps its own light and dark theme.": [
+      "settings/main.js:488"
+    ],
+    "From your ssh config": [
+      "machine-add/main.js:327"
+    ],
+    "Go to a tab, space or agent…": [
+      "picker/main.js:40"
+    ],
+    "Go to space or tab…": [
+      "palette/main.js:25"
+    ],
+    "Go to…": [
+      "picker/main.js:241"
+    ],
+    "Got it": [
+      "whatsnew/main.js:61"
+    ],
+    "Grouped by space": [
+      "agents/main.js:57"
+    ],
+    "Herdr comes with a couple of panels. Turn one on and it appears beside your terminals. Drag this window aside to see it. Later, the buttons in the tab bar open and close them.": [
+      "welcome/main.js:398"
+    ],
+    "Herdr looks for both every hour and tells you in the corner. herdr-core runs your terminals, so they keep running through its updates.": [
+      "settings/main.js:745"
+    ],
+    "Herdr runs your terminals in the background": [
+      "welcome/main.js:287"
+    ],
+    "Herdr's sound": [
+      "settings/main.js:673"
+    ],
+    "Hide": [
+      "settings/main.js:800"
+    ],
+    "Idle": [
+      "agents/main.js:60"
+    ],
+    "Interface font": [
+      "settings/main.js:508"
+    ],
+    "It changed since this opened. Enter again removes it anyway.": [
+      "worktree/main.js:220"
+    ],
+    "It didn't work.": [
+      "settings/main.js:574"
+    ],
+    "It has uncommitted changes: they will be lost.": [
+      "worktree/main.js:336"
+    ],
+    "It opens the command palette, with every action by name and its key. It works the same in every layout.": [
+      "welcome/main.js:432"
+    ],
+    "It's open on the Mac's screen.": [
+      "machine-add/main.js:189"
+    ],
+    "Jan": [
+      "settings/release-notes.js:7",
+      "whatsnew/release-notes.js:7"
+    ],
+    "Jul": [
+      "settings/release-notes.js:7",
+      "whatsnew/release-notes.js:7"
+    ],
+    "Jun": [
+      "settings/release-notes.js:7",
+      "whatsnew/release-notes.js:7"
+    ],
+    "Keybinds": [
+      "menu/main.js:66",
+      "help/main.js:60"
+    ],
+    "Keyboard": [
+      "settings/main.js:11"
+    ],
+    "Keys": [
+      "palette/main.js:54"
+    ],
+    "Layout": [
+      "settings/main.js:483",
+      "palette/main.js:20",
+      "palette/main.js:41",
+      "palette/main.js:42",
+      "palette/main.js:43",
+      "palette/main.js:44",
+      "palette/main.js:88"
+    ],
+    "Left Option is Alt": [
+      "settings/main.js:516"
+    ],
+    "Light": [
+      "settings/main.js:21",
+      "settings/main.js:491",
+      "welcome/main.js:14"
+    ],
+    "Light or dark, or as your system is now.": [
+      "settings/main.js:487"
+    ],
+    "Loading changes…": [
+      "changes/main.js:193"
+    ],
+    "Loading files…": [
+      "files/main.js:175"
+    ],
+    "Loading file…": [
+      "files/main.js:177"
+    ],
+    "Loading…": [
+      "spaces/main.js:308"
+    ],
+    "Look": [
+      "settings/main.js:10"
+    ],
+    "Machines": [
+      "settings/main.js:12",
+      "settings/main.js:657"
+    ],
+    "Make it yours": [
+      "welcome/main.js:436"
+    ],
+    "Mar": [
+      "settings/release-notes.js:7",
+      "whatsnew/release-notes.js:7"
+    ],
+    "Maximize window": [
+      "palette/main.js:51"
+    ],
+    "May": [
+      "settings/release-notes.js:7",
+      "whatsnew/release-notes.js:7"
+    ],
+    "Minimize window": [
+      "palette/main.js:50"
+    ],
+    "Mod to copy; creates <name>-copy": [
+      "palette/main.js:157"
+    ],
+    "More examples in Settings": [
+      "welcome/main.js:454"
+    ],
+    "Name": [
+      "prompt/main.js:43"
+    ],
+    "Needs you": [
+      "agents/main.js:60",
+      "agents/main.js:217",
+      "pane/main.js:67"
+    ],
+    "New name (addresses using the old name stop working)": [
+      "settings/main.js:645"
+    ],
+    "New space": [
+      "new-menu/main.js:69",
+      "menu/main.js:65",
+      "palette/main.js:36"
+    ],
+    "New space there": [
+      "spaces/main.js:342"
+    ],
+    "New tab": [
+      "menu/main.js:53",
+      "palette/main.js:24"
+    ],
+    "New terminal": [
+      "palette/main.js:45"
+    ],
+    "New worktree": [
+      "menu/main.js:59"
+    ],
+    "New worktree…": [
+      "new-menu/main.js:70"
+    ],
+    "Next": [
+      "welcome/main.js:553"
+    ],
+    "Next agent": [
+      "palette/main.js:48"
+    ],
+    "Next layout": [
+      "palette/main.js:41"
+    ],
+    "Next space": [
+      "palette/main.js:39"
+    ],
+    "Next tab": [
+      "palette/main.js:28"
+    ],
+    "No agent status yet. Agents show up here when they report their status. Older versions and agents inside tmux may not.": [
+      "agents/main.js:440"
+    ],
+    "No files": [
+      "files/main.js:175"
+    ],
+    "No folder": [
+      "files/main.js:175",
+      "changes/main.js:193"
+    ],
+    "No matching worktrees.": [
+      "worktree/main.js:299"
+    ],
+    "No other machines yet.": [
+      "settings/main.js:662"
+    ],
+    "No successful check. Check your connection and try again.": [
+      "settings/main.js:701"
+    ],
+    "No text diff available": [
+      "changes/main.js:129"
+    ],
+    "No uncommitted changes": [
+      "changes/main.js:193"
+    ],
+    "Not a git repository": [
+      "changes/main.js:73"
+    ],
+    "Not checked: a build from source looks for no updates.": [
+      "settings/main.js:735"
+    ],
+    "Not now": [
+      "welcome/main.js:553"
+    ],
+    "Not now? Add machine is at the bottom of the sidebar too.": [
+      "welcome/main.js:341"
+    ],
+    "Nothing is collected or sent while it's off.": [
+      "settings/main.js:807"
+    ],
+    "Nov": [
+      "settings/release-notes.js:7",
+      "whatsnew/release-notes.js:7"
+    ],
+    "Oct": [
+      "settings/release-notes.js:7",
+      "whatsnew/release-notes.js:7"
+    ],
+    "Once a day: which agents and features you use, how many spaces and tabs, your system and Herdr's version. Never what's in your terminals, never names of files, folders or projects.": [
+      "settings/main.js:786"
+    ],
+    "One key opens everything": [
+      "welcome/main.js:431"
+    ],
+    "Open a space": [
+      "welcome/main.js:554"
+    ],
+    "Open worktree": [
+      "menu/main.js:59"
+    ],
+    "Open worktree…": [
+      "new-menu/main.js:71"
+    ],
+    "Option key": [
+      "settings/main.js:521"
+    ],
+    "Or type how ssh reaches it": [
+      "machine-add/main.js:341"
+    ],
+    "Pane": [
+      "palette/main.js:20",
+      "palette/main.js:30",
+      "palette/main.js:31",
+      "palette/main.js:32",
+      "palette/main.js:33",
+      "palette/main.js:34",
+      "palette/main.js:35"
+    ],
+    "Pane header": [
+      "pane/mod.json:1"
+    ],
+    "Paste": [
+      "palette/main.js:47"
+    ],
+    "Peek": [
+      "peek/mod.json:1"
+    ],
+    "Pick a host from your ssh config. Herdr connects, installs herdr-core there if it's missing, and lists that machine in the sidebar with its own spaces.": [
+      "welcome/main.js:314"
+    ],
+    "Picker": [
+      "picker/mod.json:1"
+    ],
+    "Pin to the top": [
+      "agents/main.js:322"
+    ],
+    "Pinned": [
+      "agents/main.js:370"
+    ],
+    "Play": [
+      "settings/main.js:685",
+      "settings/main.js:686"
+    ],
+    "Play sounds": [
+      "settings/main.js:680"
+    ],
+    "Previous agent": [
+      "palette/main.js:49"
+    ],
+    "Previous space": [
+      "palette/main.js:40"
+    ],
+    "Previous tab": [
+      "palette/main.js:29"
+    ],
+    "Priority": [
+      "agents/main.js:56"
+    ],
+    "Privacy": [
+      "settings/main.js:15"
+    ],
+    "Quit Herdr": [
+      "palette/main.js:61"
+    ],
+    "Read `herdr-app --skill`, then migrate my keybinds and settings from ~/.config/herdr/config.toml": [
+      "welcome/main.js:11"
+    ],
+    "Read ~/.config/herdr-app/AGENTS.md, then tell me what you can change in Herdr.": [
+      "welcome/main.js:10"
+    ],
+    "Reading machines…": [
+      "settings/main.js:661"
+    ],
+    "Reading ~/.ssh/config…": [
+      "machine-add/main.js:337"
+    ],
+    "Recent": [
+      "palette/main.js:20",
+      "palette/main.js:173"
+    ],
+    "Remove": [
+      "settings/main.js:618"
+    ],
+    "Remove machine": [
+      "settings/main.js:643"
+    ],
+    "Remove worktree": [
+      "menu/main.js:60"
+    ],
+    "Removing…": [
+      "settings/main.js:615"
+    ],
+    "Rename": [
+      "menu/main.js:52",
+      "menu/main.js:58",
+      "settings/main.js:618"
+    ],
+    "Rename space": [
+      "palette/main.js:37"
+    ],
+    "Rename tab": [
+      "palette/main.js:26"
+    ],
+    "Renaming…": [
+      "settings/main.js:615"
+    ],
+    "Reset": [
+      "settings/main.js:504"
+    ],
+    "Reset layout": [
+      "palette/main.js:42"
+    ],
+    "Reset to the default screen": [
+      "palette/main.js:57"
+    ],
+    "Reset zoom": [
+      "palette/main.js:60"
+    ],
+    "Restart to update": [
+      "settings/main.js:722"
+    ],
+    "Right Option is Alt": [
+      "settings/main.js:517"
+    ],
+    "Same idea as before: spaces, tabs and terminals.": [
+      "welcome/main.js:277"
+    ],
+    "Save": [
+      "prompt/main.js:48",
+      "settings/main.js:648"
+    ],
+    "Select a file to view its changes": [
+      "changes/main.js:200"
+    ],
+    "Send": [
+      "feedback/main.js:112"
+    ],
+    "Send feedback": [
+      "settings/main.js:880",
+      "feedback/mod.json:1",
+      "feedback/main.js:95"
+    ],
+    "Send right-clicks to pane": [
+      "menu/main.js:43"
+    ],
+    "Sending…": [
+      "feedback/main.js:112"
+    ],
+    "Sent as is, soon.": [
+      "settings/main.js:809"
+    ],
+    "Sent. Thanks for helping us improve Herdr.": [
+      "feedback/main.js:99"
+    ],
+    "Sep": [
+      "settings/release-notes.js:7",
+      "whatsnew/release-notes.js:7"
+    ],
+    "Settings": [
+      "workspace-chrome/main.js:41",
+      "settings/mod.json:1",
+      "settings/main.js:827",
+      "palette/main.js:53"
+    ],
+    "Settings › Look has more layouts to try or start from, Herdr 98 among them. Your agent can copy any of them and change anything.": [
+      "welcome/main.js:455"
+    ],
+    "Share anonymous usage data": [
+      "settings/main.js:785"
+    ],
+    "Shift": [
+      "new-menu/main.js:12"
+    ],
+    "Shift+": [
+      "workspace-status/main.js:10"
+    ],
+    "Show": [
+      "settings/main.js:800"
+    ],
+    "Showing the first 1,000 changed files": [
+      "changes/main.js:194"
+    ],
+    "Size": [
+      "welcome/main.js:293"
+    ],
+    "Size and fonts": [
+      "settings/main.js:494"
+    ],
+    "Something off or missing? Settings › Send feedback.": [
+      "whatsnew/main.js:58"
+    ],
+    "Something off or missing? Settings › Send feedback. We read every one.": [
+      "welcome/main.js:457"
+    ],
+    "Sort agents": [
+      "agents/main.js:151"
+    ],
+    "Sounds": [
+      "settings/main.js:676"
+    ],
+    "Space": [
+      "palette/main.js:20",
+      "palette/main.js:36",
+      "palette/main.js:37",
+      "palette/main.js:38",
+      "palette/main.js:39",
+      "palette/main.js:40"
+    ],
+    "Spaces": [
+      "spaces/mod.json:1",
+      "spaces/main.js:458"
+    ],
+    "Split down": [
+      "menu/main.js:37",
+      "palette/main.js:31"
+    ],
+    "Split right": [
+      "menu/main.js:36",
+      "palette/main.js:30"
+    ],
+    "Start an agent": [
+      "new-menu/main.js:63"
+    ],
+    "Super": [
+      "new-menu/main.js:12"
+    ],
+    "System": [
+      "settings/main.js:20",
+      "welcome/main.js:13"
+    ],
+    "Tab": [
+      "palette/main.js:20",
+      "palette/main.js:24",
+      "palette/main.js:25",
+      "palette/main.js:26",
+      "palette/main.js:27",
+      "palette/main.js:28",
+      "palette/main.js:29"
+    ],
+    "Tabs": [
+      "tabs/mod.json:1"
+    ],
+    "Terminal": [
+      "tabs/main.js:57",
+      "new-menu/main.js:62",
+      "palette/main.js:20",
+      "palette/main.js:45",
+      "palette/main.js:46",
+      "palette/main.js:47"
+    ],
+    "Terminal font": [
+      "settings/main.js:507"
+    ],
+    "Terminals": [
+      "settings/main.js:18",
+      "palette/main.js:87"
+    ],
+    "The folder you're in as a tree. Open a file to read it, highlighted.": [
+      "welcome/main.js:19"
+    ],
+    "The terminals and agents you open here don't live in this window. They run in herdr-core, a small background program on your computer. Close Herdr, update it, or let it crash, and your agents keep working. Open it again and everything is where you left it, as long as the computer is on.": [
+      "welcome/main.js:287"
+    ],
+    "Theme": [
+      "settings/main.js:486"
+    ],
+    "Theme: atom one dark": [
+      "menu/main.js:70"
+    ],
+    "Theme: graphite": [
+      "menu/main.js:67"
+    ],
+    "Theme: ink": [
+      "menu/main.js:68"
+    ],
+    "Theme: moss": [
+      "menu/main.js:69"
+    ],
+    "Then ask for anything: “move the sidebar to the right”, “a panel with my pull requests”.": [
+      "welcome/main.js:438"
+    ],
+    "They show up under the agent that started them. Click one to watch it.": [
+      "welcome/main.js:289"
+    ],
+    "This build never sends: it's built from source. You can still see what a release would send.": [
+      "settings/main.js:799"
+    ],
+    "This build was made from source and doesn't send feedback. Use a release build.": [
+      "feedback/main.js:96"
+    ],
+    "This computer": [
+      "workspace-status/main.js:24",
+      "spaces/main.js:326",
+      "settings/main.js:659",
+      "welcome/main.js:322"
+    ],
+    "This file is no longer available": [
+      "files/main.js:138"
+    ],
+    "This is a new app on a new core. Your herdr workspaces stay where they are; nothing moves over.": [
+      "welcome/main.js:276"
+    ],
+    "This is the repository's main checkout, not a worktree.": [
+      "worktree/main.js:321"
+    ],
+    "This layout sets its own; yours shows in the others.": [
+      "settings/main.js:471"
+    ],
+    "This machine was rebuilt or replaced. Click to connect to the new one.": [
+      "spaces/main.js:332"
+    ],
+    "Today so far": [
+      "settings/main.js:810"
+    ],
+    "Try again": [
+      "settings/main.js:730"
+    ],
+    "Type a branch name.": [
+      "worktree/main.js:184"
+    ],
+    "Type a command…": [
+      "palette/main.js:134"
+    ],
+    "Type to filter…": [
+      "help/main.js:27"
+    ],
+    "Type to search fonts": [
+      "settings/main.js:35"
+    ],
+    "Types characters": [
+      "settings/main.js:515"
+    ],
+    "Unpin": [
+      "agents/main.js:322"
+    ],
+    "Up to 3 screenshots.": [
+      "feedback/main.js:15",
+      "feedback/main.js:35",
+      "feedback/main.js:89"
+    ],
+    "Update": [
+      "settings/main.js:617"
+    ],
+    "Update herdr-core": [
+      "settings/main.js:732"
+    ],
+    "Updates": [
+      "settings/main.js:14"
+    ],
+    "Updating…": [
+      "settings/main.js:615"
+    ],
+    "Updating… your terminals keep running.": [
+      "settings/main.js:728"
+    ],
+    "Usage data": [
+      "settings/main.js:781"
+    ],
+    "Use Herdr right-click menu": [
+      "menu/main.js:42"
+    ],
+    "Use Option for terminal shortcuts or to type accents and special characters.": [
+      "settings/main.js:522"
+    ],
+    "Waiting in its terminal": [
+      "machine-add/main.js:266"
+    ],
+    "Want your keybinds and settings carried over? Give your agent this line:": [
+      "welcome/main.js:278"
+    ],
+    "Want your own sounds? Ask your agent to set sounds.done and sounds.blocked in settings.json to an MP3.": [
+      "settings/main.js:687"
+    ],
+    "Welcome": [
+      "palette/main.js:55",
+      "welcome/mod.json:1"
+    ],
+    "Welcome to Herdr": [
+      "welcome/main.js:499"
+    ],
+    "What happened? What did you expect?": [
+      "feedback/main.js:9"
+    ],
+    "What we send": [
+      "settings/main.js:798"
+    ],
+    "What we send: exactly this JSON, plus the screenshots above. No logs or install ID.": [
+      "feedback/main.js:106"
+    ],
+    "What your agents changed: every file with its diff, and a commit box.": [
+      "welcome/main.js:20"
+    ],
+    "What's new": [
+      "settings/main.js:740",
+      "palette/main.js:56",
+      "whatsnew/mod.json:1"
+    ],
+    "What's new in Herdr": [
+      "whatsnew/main.js:45"
+    ],
+    "When an agent needs you, and when one finishes while you're not looking. A note shows in the corner either way.": [
+      "settings/main.js:681"
+    ],
+    "Window": [
+      "palette/main.js:20",
+      "palette/main.js:50",
+      "palette/main.js:51",
+      "palette/main.js:52"
+    ],
+    "Working": [
+      "agents/main.js:60"
+    ],
+    "Your computers, reached over ssh. Their terminals keep running when you disconnect.": [
+      "settings/main.js:658"
+    ],
+    "Your message (up to 4000 characters). Paste or drop screenshots, up to 3.": [
+      "feedback/main.js:101"
+    ],
+    "Your other machines, in the same window": [
+      "welcome/main.js:290"
+    ],
+    "Your ssh config lists no hosts": [
+      "machine-add/main.js:327"
+    ],
+    "Your terminals, outside this window too": [
+      "welcome/main.js:445"
+    ],
+    "Zoom": [
+      "menu/main.js:38",
+      "settings/main.js:498"
+    ],
+    "Zoom in": [
+      "palette/main.js:58"
+    ],
+    "Zoom out": [
+      "palette/main.js:59"
+    ],
+    "Zoom pane": [
+      "palette/main.js:33"
+    ],
+    "` in one.": [
+      "machine-add/main.js:201"
+    ],
+    "agent": [
+      "picker/main.js:197"
+    ],
+    "agents": [
+      "help/main.js:12"
+    ],
+    "asleep": [
+      "spaces/main.js:327"
+    ],
+    "bigger font size": [
+      "palette/main.js:58"
+    ],
+    "branch name": [
+      "worktree/main.js:115"
+    ],
+    "clone copy customize": [
+      "palette/main.js:43",
+      "palette/main.js:44"
+    ],
+    "colors look": [
+      "palette/main.js:62"
+    ],
+    "commands": [
+      "workspace-status/main.js:14"
+    ],
+    "connected": [
+      "welcome/main.js:323",
+      "welcome/main.js:323",
+      "welcome/main.js:323"
+    ],
+    "esc close": [
+      "worktree/main.js:358"
+    ],
+    "escape hatch broken restore": [
+      "palette/main.js:57"
+    ],
+    "filter worktrees": [
+      "worktree/main.js:115"
+    ],
+    "finished": [
+      "picker/main.js:214",
+      "peek/main.js:16"
+    ],
+    "font size": [
+      "palette/main.js:60"
+    ],
+    "git rev-parse failed.": [
+      "worktree/main.js:86"
+    ],
+    "git status failed.": [
+      "worktree/main.js:212"
+    ],
+    "git worktree add failed.": [
+      "worktree/main.js:189"
+    ],
+    "git worktree remove failed.": [
+      "worktree/main.js:225"
+    ],
+    "hc is herdr-core's command line. In any terminal, hc ls lists everything running and hc attach t3 jumps into one. Your agents can use it to start and watch other agents for you. Tell them to read hc's help, or make it a skill.": [
+      "welcome/main.js:446"
+    ],
+    "here": [
+      "welcome/main.js:322"
+    ],
+    "idle": [
+      "peek/main.js:16",
+      "peek/main.js:52"
+    ],
+    "intro start onboarding": [
+      "palette/main.js:55"
+    ],
+    "it didn't answer": [
+      "machine-add/main.js:116"
+    ],
+    "it didn't work": [
+      "machine-add/main.js:127"
+    ],
+    "keybindings shortcuts help": [
+      "palette/main.js:54"
+    ],
+    "look switch": [
+      "palette/main.js:41"
+    ],
+    "macOS asks on the Mac's own screen before an agent reads Desktop, Documents or Downloads, and waits until someone answers. Give herdr-core Full Disk Access there and it never asks again: in the list, press + and pick this file:": [
+      "machine-add/main.js:161"
+    ],
+    "main checkout": [
+      "worktree/main.js:266"
+    ],
+    "maximize fullscreen": [
+      "palette/main.js:33"
+    ],
+    "move go": [
+      "palette/main.js:34"
+    ],
+    "needs you": [
+      "picker/main.js:213",
+      "peek/main.js:16"
+    ],
+    "new space": [
+      "picker/main.js:179"
+    ],
+    "new tab": [
+      "picker/main.js:179"
+    ],
+    "new version default restore herdr's": [
+      "palette/main.js:42"
+    ],
+    "not installed": [
+      "new-menu/main.js:66"
+    ],
+    "offline": [
+      "welcome/main.js:323"
+    ],
+    "open": [
+      "worktree/main.js:111",
+      "worktree/main.js:267"
+    ],
+    "panes": [
+      "help/main.js:11"
+    ],
+    "preferences options config look font theme sound": [
+      "palette/main.js:53"
+    ],
+    "rebuilt ·": [
+      "spaces/main.js:329"
+    ],
+    "release changes news update": [
+      "palette/main.js:56"
+    ],
+    "smaller font size": [
+      "palette/main.js:59"
+    ],
+    "spaces": [
+      "help/main.js:9"
+    ],
+    "switch jump find": [
+      "palette/main.js:25"
+    ],
+    "tab agent new task": [
+      "palette/main.js:24"
+    ],
+    "tab kill": [
+      "palette/main.js:27"
+    ],
+    "tabs": [
+      "help/main.js:10"
+    ],
+    "terminal": [
+      "help/main.js:13"
+    ],
+    "type ": [
+      "help/main.js:18"
+    ],
+    "unknown": [
+      "settings/main.js:611"
+    ],
+    "window": [
+      "help/main.js:14"
+    ],
+    "working": [
+      "peek/main.js:16",
+      "peek/main.js:52",
+      "peek/main.js:62"
+    ],
+    "working…": [
+      "worktree/main.js:358"
+    ],
+    "workspace kill": [
+      "palette/main.js:38"
+    ],
+    "… (line truncated)": [
+      "changes/main.js:131"
+    ],
+    "↑↓ choose · ↵ open · esc close": [
+      "worktree/main.js:304"
+    ],
+    "↗ go to": [
+      "peek/main.js:69"
+    ],
+    "↗ keep": [
+      "peek/main.js:69"
+    ],
+    "↵ create · esc cancel": [
+      "worktree/main.js:358"
+    ],
+    "↵ remove · esc cancel": [
+      "worktree/main.js:358"
+    ],
+    "✓ Up to date": [
+      "settings/main.js:711"
+    ]
+  },
+  "templates": {
+    " Checked at ${at(u.checked)}.": [
+      "settings/main.js:698"
+    ],
+    "${Math.floor(h / 24)}d": [
+      "agents/main.js:68"
+    ],
+    "${Math.max(1, Math.round(d / 60))}m": [
+      "worktree/main.js:25"
+    ],
+    "${Math.round(d / 3600)}h": [
+      "worktree/main.js:25"
+    ],
+    "${Math.round(d / 86400 / 30)}mo": [
+      "worktree/main.js:25"
+    ],
+    "${Math.round(d / 86400)}d": [
+      "worktree/main.js:25"
+    ],
+    "${all.length} checkouts": [
+      "worktree/main.js:272"
+    ],
+    "${c.ready} is ready. Your terminals keep running through it.": [
+      "settings/main.js:732"
+    ],
+    "${h}h": [
+      "agents/main.js:68"
+    ],
+    "${key}  commands": [
+      "workspace-status/main.js:14"
+    ],
+    "${list.length} agents": [
+      "workspace-status/main.js:26"
+    ],
+    "${m.target ?? \"\"} · ${state} · ${m.version ? `hc ${m.version}` : \"hc version unknown\"}": [
+      "settings/main.js:636"
+    ],
+    "${mac.name} is a Mac: allow its folders once": [
+      "machine-add/main.js:155"
+    ],
+    "${months[Number(month) - 1]} ${Number(day)}": [
+      "settings/release-notes.js:9",
+      "whatsnew/release-notes.js:9"
+    ],
+    "${m}m": [
+      "agents/main.js:66"
+    ],
+    "${rows.length}/${all.length} checkouts": [
+      "worktree/main.js:272"
+    ],
+    "${this.files.length} files": [
+      "changes/main.js:185"
+    ],
+    "${this.folder ? tilde(this.folder, this.userHome ?? \"\") : \"This folder\"} is not in a git repository.": [
+      "worktree/main.js:284"
+    ],
+    "${this.folder ? tilde(this.folder, this.userHome) : \"This folder\"} is not in a git repository.": [
+      "worktree/main.js:318"
+    ],
+    "${u.app.ready} is ready. Restart to switch now; it also switches when you quit.": [
+      "settings/main.js:722"
+    ],
+    "A new space on a checkout in ${tilde(ROOT(this.userHome), this.userHome)}/${r.name}/. A branch that exists is checked out; a new one starts from here.": [
+      "worktree/main.js:323"
+    ],
+    "Adding ${props().target}: answer it here": [
+      "machine-add/main.js:240"
+    ],
+    "Cannot preview this diff (too large or unreadable): ${e}": [
+      "changes/main.js:145"
+    ],
+    "Closes the space and deletes ${tilde(r.top, this.userHome)}. The branch stays.": [
+      "worktree/main.js:322"
+    ],
+    "Commit failed: ${e}": [
+      "changes/main.js:162"
+    ],
+    "Connected · ${version ? `hc ${version}` : \"hc version unknown\"}": [
+      "settings/main.js:659"
+    ],
+    "Couldn't check submodule ${m.name}.": [
+      "worktree/main.js:91"
+    ],
+    "Default (${def})": [
+      "settings/main.js:454"
+    ],
+    "Focus pane ${d}": [
+      "palette/main.js:34"
+    ],
+    "Last sent: ${s.last_sent.report.day}": [
+      "settings/main.js:811"
+    ],
+    "Layout: ${t}": [
+      "palette/main.js:88"
+    ],
+    "Managed by ${c.managed}: update it there.": [
+      "settings/main.js:726"
+    ],
+    "New worktree${r ? ` of ${r.name}` : \"\"}": [
+      "worktree/main.js:313"
+    ],
+    "Nothing matches \"${this.query}\". Places are in the picker.": [
+      "palette/main.js:317"
+    ],
+    "Off for now: ${s.off_because} is set where Herdr started.": [
+      "settings/main.js:778"
+    ],
+    "Open the setting on ${mac.name}": [
+      "machine-add/main.js:187"
+    ],
+    "Open worktree${r ? ` of ${r.name}` : \"\"}": [
+      "worktree/main.js:282"
+    ],
+    "Remove ${m.name}? Its terminals keep running there.": [
+      "settings/main.js:642"
+    ],
+    "Remove worktree ${s?.name ?? \"\"}?": [
+      "worktree/main.js:313"
+    ],
+    "Removed ${machine}; its terminals keep running there.": [
+      "settings/main.js:577"
+    ],
+    "Renamed ${machine} to ${name.trim()}.": [
+      "settings/main.js:577"
+    ],
+    "Send back to ${parent.name || parent.address}": [
+      "menu/main.js:46"
+    ],
+    "Sent ${at(s.last_sent.at)}.": [
+      "settings/main.js:811"
+    ],
+    "Sort agents: ${sort.label}": [
+      "agents/main.js:434"
+    ],
+    "Submodule ${this.unpushed.join(\", \")} has commits that aren't pushed anywhere: they will be lost.": [
+      "worktree/main.js:337"
+    ],
+    "Swap pane ${d}": [
+      "palette/main.js:35"
+    ],
+    "The update failed: ${c.error}": [
+      "settings/main.js:730"
+    ],
+    "Theme: ${n.replace(/-/g, \" \")}": [
+      "palette/main.js:62"
+    ],
+    "Up to date.${checked}": [
+      "settings/main.js:700"
+    ],
+    "Updated ${machine}${payload?.version ? ` to hc ${payload.version}` : \"\"}; its terminals kept running.": [
+      "settings/main.js:576"
+    ],
+    "Waiting to send: ${r.day}": [
+      "settings/main.js:809"
+    ],
+    "also ${h.aliases.join(\", \")}": [
+      "machine-add/main.js:338"
+    ],
+    "earlier: ${r.count} quiet space${r.count > 1 ? \"s\" : \"\"} ${this.showEarlier ? \"▴\" : \"▾\"}": [
+      "picker/main.js:175"
+    ],
+    "from ${parent.name || parent.address}": [
+      "peek/main.js:66"
+    ],
+    "look ${l}": [
+      "palette/main.js:88"
+    ],
+    "new space on ${r.machine}": [
+      "picker/main.js:179"
+    ],
+    "· ${needs} needs you": [
+      "workspace-status/main.js:27"
+    ]
+  },
+  "per_file": {
+    "agents/main.js": [
+      "<1m"
+    ],
+    "help/main.js": [
+      "agents",
+      "panes",
+      "spaces",
+      "tabs",
+      "terminal",
+      "type ",
+      "window"
+    ],
+    "peek/main.js": [
+      "finished",
+      "idle",
+      "working"
+    ],
+    "picker/main.js": [
+      "agent",
+      "finished"
+    ],
+    "settings/main.js": [
+      "unknown"
+    ],
+    "spaces/main.js": [
+      "asleep"
+    ],
+    "welcome/main.js": [
+      "BETA",
+      "connected",
+      "here",
+      "offline"
+    ],
+    "workspace-status/main.js": [
+      "commands"
+    ],
+    "worktree/main.js": [
+      "open"
+    ]
+  }
+}

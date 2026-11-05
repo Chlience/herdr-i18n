@@ -1,0 +1,11 @@
+{
+  "place": "none",
+  "title": "位置搜索",
+  "overlay": {
+    "kind": "popup",
+    "at": "top",
+    "offset": 40,
+    "width": 640,
+    "height": 0.8
+  }
+}

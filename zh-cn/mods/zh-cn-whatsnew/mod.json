@@ -1,0 +1,9 @@
+{
+  "place": "none",
+  "title": "更新说明",
+  "overlay": {
+    "kind": "window",
+    "width": 880,
+    "height": 760
+  }
+}
