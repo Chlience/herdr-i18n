@@ -3,9 +3,26 @@
 export * from "herdr";
 import * as app from "herdr";
 
-const { prefix, mods, screens } = __CONFIG__;
+const { prefix, mods, screens, languages, main } = __CONFIG__;
+export const LANGUAGES = languages;
 const own = (name) => (mods.includes(name) ? prefix + name : name);
 const screen = (name, props) => app.openOverlay({ ...screens[name], mod: own(name), ...(props ? { props } : {}) });
+
+// Each mod's main.js names its language folder, and saving it reloads the mod. A mod's work stops
+// when it reloads or closes, so the mod asking (self) goes last and closes only after this finishes.
+export async function setLanguage(code, self) {
+  if (!languages.some(([known]) => known === code)) return;
+  const text = main.replace("{code}", code);
+  try {
+    for (const name of [...mods.filter((m) => m !== self), self]) {
+      const path = `${app.appHome()}/mods/${prefix}${name}/main.js`;
+      const now = await app.readTextFile(path);
+      if (now !== text) await app.writeTextFile(path, text, now);
+    }
+  } catch (e) {
+    app.notify({ title: "Couldn't change the language", body: String(e), level: "error" });
+  }
+}
 
 export function openOverlay(spec) {
   return app.openOverlay(spec.mod ? { ...spec, mod: own(spec.mod) } : spec);

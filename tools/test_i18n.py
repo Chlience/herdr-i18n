@@ -93,7 +93,7 @@ class Translate(unittest.TestCase):
 
     def test_only_the_import_of_herdr_moves(self):
         out = self.run_it('import { run } from "herdr"; f("herdr");')[0]
-        self.assertEqual(out, 'import { run } from "./api.js"; f("herdr");')
+        self.assertEqual(out, 'import { run } from "../api.js"; f("herdr");')
 
     def test_compared_text_stays_and_is_reported(self):
         out, risky = self.run_it('if (a === "Save" || "Save" !== b) f(x ? "Save" : y); switch (c) { case "Save": }')
@@ -145,19 +145,18 @@ class Repo(unittest.TestCase):
             'repository': 'x/y', 'tag': 'v1', 'commit': 'abc', 'mods': ['menu'], 'frames': ['settings'],
             'screens': {'settings': {'kind': 'dialog'}}, 'keys': {'app.settings': 'settings'},
             'patches': [{'file': 'settings/main.js', 'find': 'const LOOKS = {',
-                         'replace': 'const LOOKS = { "{layout}": {title},'}]})
-        i18n.write_json(root / 'source' / 'rules.json', {'ignore': ['Skip me', 'Herdr'], 'include': [
+                         'replace': 'const SHOWN = {locale};\nconst LOOKS = { "{layout}": {title},'}]})
+        i18n.write_json(root / 'source' / 'rules.json', {'ignore': ['Skip me', 'Herdr', 'Herdr i18n'], 'include': [
             {'file': 'menu/main.js', 'text': 'open'}]})
         self.up = self.tmp / 'up'
         for rel, text in {
             'defaults/mods/menu/main.js': 'import { run } from "herdr";\nf("Save", "Skip me", `Hi ${name}`, "open");\n',
-            'defaults/mods/menu/mod.json': '{ "place": "left", "title": "Save" }',
+            'defaults/mods/menu/mod.json': '{ "place": "left", "title": "Unread title" }',
             'defaults/frame/settings/main.js': 'const LOOKS = { main: "Herdr" };\nf("New words here");\n',
             'defaults/frame/settings/mod.json': '{ "place": "none" }',
             'defaults/layouts/main.json': '{"id": "root", "children": [{"content": {"mod": "menu"}}, {"content": {"mod": "other"}}]}',
             'defaults/keys.json': '{"global": {"ctrl-,": "app.settings", "ctrl-t": "tab.new"}}',
             'defaults/keys.macos.json': '{"global": {"cmd-,": "app.settings"}}',
-            'LICENSE': 'license',
         }.items():
             (self.up / rel).parent.mkdir(parents=True, exist_ok=True)
             (self.up / rel).write_text(text)
@@ -165,41 +164,74 @@ class Repo(unittest.TestCase):
         self.args = argparse.Namespace(upstream=str(self.up), locales=[], verbose=False, strict=False)
         i18n.extract(self.args)
         i18n.build(self.args)
-        self.out = root / 'xx'
+        self.root = root
         self.home = self.tmp / 'home'
         (self.home / 'layouts').mkdir(parents=True)
         (self.home / 'mods').mkdir()
 
-    def install(self, keys=False):
-        i18n.install(argparse.Namespace(locale='xx', home=str(self.home), keys=keys))
+    def install(self, locale=None, keys=False):
+        i18n.install(argparse.Namespace(locale=locale, home=str(self.home), keys=keys))
+
+    def old_build(self, code='zz'):
+        """What an earlier version installed: one layout and set of mods per language."""
+        (self.home / 'layouts' / f'{code}.json').write_text(json.dumps({'terminal_menu': f'{code}-menu'}))
+        for name in ('menu', 'tabs'):
+            (self.home / 'mods' / f'{code}-{name}').mkdir()
+            (self.home / 'mods' / f'{code}-{name}' / 'main.js').write_text(f'{i18n.MARK} from herdr-app v0 x ({code}).\n')
 
     def test_extract_lists_text_and_skips_rules(self):
         data = json.loads((i18n.SOURCE / 'strings.json').read_text())
         self.assertEqual(set(data['literals']), {'Save', 'New words here', 'open'})
-        self.assertEqual(data['per_file'], {'menu/main.js': ['open']})
         self.assertEqual(set(data['templates']), {'Hi ${name}'})
+        self.assertEqual(data['per_file'], {'menu/main.js': ['open']})
 
-    def test_built_mod(self):
-        main = (self.out / 'mods' / 'xx-menu' / 'main.js').read_text()
+    def test_every_language_has_its_own_copy(self):
+        mod = self.root / 'mods' / 'i18n-menu'
+        english, french = (mod / 'en' / 'main.js').read_text(), (mod / 'xx' / 'main.js').read_text()
+        self.assertTrue(french.startswith(i18n.MARK))
+        self.assertIn('from "../api.js"', french)
+        self.assertIn('f("Sauver", "Skip me", `Salut ${name}`, "open")', french)
+        self.assertIn('f("Save", "Skip me", `Hi ${name}`, "open")', english)
+        self.assertIn('from "../api.js"', english)
+
+    def test_main_names_the_language(self):
+        main = (self.root / 'mods' / 'i18n-menu' / 'main.js').read_text()
         self.assertTrue(main.startswith(i18n.MARK))
-        self.assertIn('from "./api.js"', main)
-        self.assertIn('f("Sauver", "Skip me", `Salut ${name}`, "open")', main)
-        self.assertEqual(json.loads((self.out / 'mods' / 'xx-menu' / 'mod.json').read_text()),
-                         {'place': 'none', 'title': 'Sauver'})
-        settings = (self.out / 'mods' / 'xx-settings' / 'main.js').read_text()
-        self.assertIn('const LOOKS = { "xx": "Herdr X", main: "Herdr" }', settings)
+        self.assertIn('export { default } from "./en/main.js";', main)
 
-    def test_built_layout_and_keys(self):
-        tree = json.loads((self.out / 'layouts' / 'xx.json').read_text())
-        self.assertEqual([c['content']['mod'] for c in tree['children']], ['xx-menu', 'other'])
-        self.assertEqual(tree['terminal_menu'], 'xx-menu')
-        self.assertEqual(json.loads((self.out / 'keys.json').read_text()),
-                         {'layout:xx': {'ctrl-,': 'mod.open:xx-settings'}})
+    def test_patches_know_their_language(self):
+        settings = self.root / 'mods' / 'i18n-settings'
+        self.assertIn('const SHOWN = "xx";\nconst LOOKS = { "herdr-i18n": "Herdr X", main: "Herdr" }', (settings / 'xx' / 'main.js').read_text())
+        self.assertIn('const SHOWN = "en";\nconst LOOKS = { "herdr-i18n": "Herdr i18n", main: "Herdr" }', (settings / 'en' / 'main.js').read_text())
+
+    def test_mod_json_and_shim(self):
+        self.assertEqual(json.loads((self.root / 'mods' / 'i18n-menu' / 'mod.json').read_text()),
+                         {'place': 'none', 'title': 'Unread title'})
+        self.assertEqual(json.loads((self.root / 'mods' / 'i18n-settings' / 'mod.json').read_text())['overlay'], {'kind': 'dialog'})
+        shim = (self.root / 'mods' / 'i18n-menu' / 'api.js').read_text()
+        self.assertIn('[["en", "English"], ["xx", "X"]]', shim)
+        self.assertNotIn('__CONFIG__', shim)
+
+    def test_one_layout_and_its_keys(self):
+        self.assertEqual([p.name for p in (self.root / 'layouts').iterdir()], ['herdr-i18n.json'])
+        tree = json.loads((self.root / 'layouts' / 'herdr-i18n.json').read_text())
+        self.assertEqual([c['content']['mod'] for c in tree['children']], ['i18n-menu', 'other'])
+        self.assertEqual(tree['terminal_menu'], 'i18n-menu')
+        self.assertEqual(json.loads((self.root / 'keys.json').read_text()),
+                         {'layout:herdr-i18n': {'ctrl-,': 'mod.open:i18n-settings'}})
 
     def test_patch_that_stopped_matching_fails_the_build(self):
         (self.up / 'defaults/frame/settings/main.js').write_text('const OTHER = {};')
         with self.assertRaises(SystemExit):
             i18n.build(self.args)
+
+    def test_broken_catalog_fails_before_touching_the_build(self):
+        catalog = json.loads((i18n.LOCALES / 'xx.json').read_text())
+        catalog['templates']['Hi ${name}'] = 'Salut ${evil()}'
+        i18n.write_json(i18n.LOCALES / 'xx.json', catalog)
+        with self.assertRaises(SystemExit):
+            i18n.build(self.args)
+        self.assertTrue((self.root / 'mods' / 'i18n-menu' / 'main.js').exists())
 
     def test_check_reports_coverage(self):
         self.args.strict = True
@@ -212,76 +244,106 @@ class Repo(unittest.TestCase):
         i18n.write_json(i18n.LOCALES / 'xx.json', catalog)
         i18n.check(self.args)
 
-    def test_new_locale_starts_empty_and_builds(self):
+    def test_new_locale_starts_empty_and_joins_the_menu(self):
         i18n.new(argparse.Namespace(locale='fr', name='Français', title='Herdr Français'))
         catalog = json.loads((i18n.LOCALES / 'fr.json').read_text())
         self.assertEqual(catalog['literals']['Save'], '')
         self.assertNotIn('open', catalog['literals'])  # an id elsewhere: only ever per file
         self.assertEqual(catalog['per_file'], {'menu/main.js': {'open': ''}})
-        self.args.locales = ['fr']
         i18n.build(self.args)
+        mod = self.root / 'mods' / 'i18n-menu'
         # Untranslated stays English, even the per-file words.
-        self.assertIn('f("Save", "Skip me", `Hi ${name}`, "open")', (i18n.ROOT / 'fr' / 'mods' / 'fr-menu' / 'main.js').read_text())
+        self.assertIn('f("Save", "Skip me", `Hi ${name}`, "open")', (mod / 'fr' / 'main.js').read_text())
+        self.assertIn('["fr", "Français"]', (mod / 'api.js').read_text())
 
-    def test_bad_locale_names_never_reach_rmtree(self):
+    def test_english_is_built_in(self):
         with self.assertRaises(SystemExit):
-            i18n.catalogs(['tools'])
+            i18n.new(argparse.Namespace(locale='en', name='English', title='x'))
+
+    def test_bad_locale_names_are_refused(self):
+        for name in ('tools', '../x'):
+            with self.assertRaises(SystemExit):
+                i18n.catalogs([name])
+
+    def test_install_defaults_to_english_then_keeps_the_choice(self):
+        self.install()
+        main = self.home / 'mods' / 'i18n-menu' / 'main.js'
+        self.assertIn('"./en/main.js"', main.read_text())
+        self.install('xx')
+        self.assertIn('"./xx/main.js"', main.read_text())
+        self.install()
+        self.assertIn('"./xx/main.js"', main.read_text())
+        self.assertTrue((self.home / 'layouts' / 'herdr-i18n.json').exists())
+
+    def test_install_refuses_an_unknown_language(self):
         with self.assertRaises(SystemExit):
-            i18n.catalogs(['../x'])
+            self.install('qq')
 
-    def test_install_and_reinstall(self):
+    def test_install_removes_mods_a_later_build_dropped(self):
         self.install()
-        self.assertTrue((self.home / 'mods' / 'xx-menu' / 'main.js').exists())
-        self.assertTrue((self.home / 'layouts' / 'xx.json').exists())
-        (self.home / 'mods' / 'xx-old').mkdir()
-        (self.home / 'mods' / 'xx-old' / 'main.js').write_text(f'{i18n.MARK} from herdr-app v0 x (xx).\n')
+        (self.home / 'mods' / 'i18n-old').mkdir()
+        (self.home / 'mods' / 'i18n-old' / 'main.js').write_text(i18n.MAIN.replace('{code}', 'en'))
         self.install()
-        self.assertFalse((self.home / 'mods' / 'xx-old').exists())
-        self.assertEqual(sorted(p.name for p in (self.home / 'mods').iterdir()), ['xx-menu', 'xx-settings'])
+        self.assertEqual(sorted(p.name for p in (self.home / 'mods').iterdir()), ['i18n-menu', 'i18n-settings'])
 
-    def test_install_leaves_other_mods_alone(self):
-        for name, first in [('xx-mine', '// my own mod\n'), ('xx-yy-menu', f'{i18n.MARK} from herdr-app v1 x (xx-YY).\n')]:
+    def test_install_replaces_an_earlier_per_language_build(self):
+        self.old_build()
+        i18n.write_json(self.home / 'keys.json', {'global': {}, 'layout:zz': {'a': 'b'}})
+        self.install('xx', keys=True)
+        self.assertFalse((self.home / 'layouts' / 'zz.json').exists())
+        self.assertFalse((self.home / 'mods' / 'zz-menu').exists())
+        self.assertFalse((self.home / 'mods' / 'zz-tabs').exists())
+        self.assertNotIn('layout:zz', json.loads((self.home / 'keys.json').read_text()))
+
+    def test_install_leaves_other_layouts_and_mods_alone(self):
+        (self.home / 'layouts' / 'mine.json').write_text(json.dumps({'terminal_menu': 'mine-menu'}))
+        for name, first in [('i18n-mine', '// my own mod\n'), ('mine-menu', '// my own mod\n'), ('mine-tabs', '// mine\n')]:
             (self.home / 'mods' / name).mkdir()
             (self.home / 'mods' / name / 'main.js').write_text(first)
         self.install()
-        self.assertTrue((self.home / 'mods' / 'xx-mine').exists())
-        self.assertTrue((self.home / 'mods' / 'xx-yy-menu').exists())
+        self.assertTrue((self.home / 'mods' / 'i18n-mine').exists())
+        self.assertTrue((self.home / 'mods' / 'mine-menu').exists())
+        self.assertTrue((self.home / 'layouts' / 'mine.json').exists())
 
     def test_install_refuses_to_replace_what_it_did_not_write(self):
-        (self.home / 'mods' / 'xx-menu').mkdir()
-        (self.home / 'mods' / 'xx-menu' / 'main.js').write_text('// my own mod\n')
+        (self.home / 'mods' / 'i18n-menu').mkdir()
+        (self.home / 'mods' / 'i18n-menu' / 'main.js').write_text('// my own mod\n')
         with self.assertRaises(SystemExit):
             self.install()
-        self.assertEqual((self.home / 'mods' / 'xx-menu' / 'main.js').read_text(), '// my own mod\n')
-        shutil.rmtree(self.home / 'mods' / 'xx-menu')
-        (self.home / 'layouts' / 'xx.json').write_text('{"terminal_menu": "mine"}')
-        with self.assertRaises(SystemExit):
+        self.assertEqual((self.home / 'mods' / 'i18n-menu' / 'main.js').read_text(), '// my own mod\n')
+        shutil.rmtree(self.home / 'mods' / 'i18n-menu')
+        layout = self.home / 'layouts' / 'herdr-i18n.json'
+        layout.write_text('{"terminal_menu": "something-else"}')
+        with self.assertRaises(SystemExit) as refused:
             self.install()
+        self.assertIn('.old', str(refused.exception))
+        self.assertEqual(layout.read_text(), '{"terminal_menu": "something-else"}')
 
     def test_install_keys_follow_the_persons_own_bindings(self):
         i18n.write_json(self.home / 'keys.json', {'global': {'alt-s': 'app.settings', 'ctrl-t': 'tab.new'}})
         self.install(keys=True)
         keys = json.loads((self.home / 'keys.json').read_text())
-        self.assertEqual(keys['layout:xx'], {'alt-s': 'mod.open:xx-settings'})
+        self.assertEqual(keys['layout:herdr-i18n'], {'alt-s': 'mod.open:i18n-settings'})
         self.assertEqual(keys['global']['ctrl-t'], 'tab.new')
 
 
 class Shipped(unittest.TestCase):
-    """The committed builds, against the pinned herdr-app when it's in .cache/."""
+    """The committed build, against the pinned herdr-app when it's in .cache/."""
 
-    def test_builds_change_only_text(self):
+    def test_every_language_changes_only_text(self):
         cfg = i18n.config()
         up = REPO / '.cache' / f"herdr-app-{cfg['tag']}"
         if not up.exists():
             self.skipTest('run i18n.py fetch first')
-        for code, catalog in i18n.catalogs([]):
-            layout = code.lower()
+        everyone = [(i18n.ENGLISH[0], i18n.ENGLISH[2])] + [(c, cat['title']) for c, cat in i18n.catalogs([])]
+        for code, title in everyone:
             for name, folder, scripts in i18n.sources(up):
                 for script in scripts:
-                    built = (REPO / layout / 'mods' / f'{layout}-{name}' / script.name).read_text()
+                    file = f'{name}/{script.name}'
+                    built = (REPO / 'mods' / f'{i18n.PREFIX}{name}' / code / script.name).read_text()
                     self.assertTrue(built.startswith(i18n.MARK))
-                    original = i18n.apply_patches(script.read_text(), f'{name}/{script.name}', cfg, layout, catalog['title'])
-                    self.assertEqual(jslex.skeleton(built), jslex.skeleton(original), f'{code} {name}/{script.name}')
+                    original = i18n.apply_patches(script.read_text(), file, cfg, title, code)
+                    self.assertEqual(jslex.skeleton(built), jslex.skeleton(original), f'{code} {file}')
 
 
 if __name__ == '__main__':

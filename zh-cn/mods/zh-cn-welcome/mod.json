@@ -1,9 +1,0 @@
-{
-  "place": "none",
-  "title": "欢迎",
-  "overlay": {
-    "kind": "window",
-    "width": 660,
-    "height": 600
-  }
-}

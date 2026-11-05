@@ -1,0 +1,9 @@
+{
+  "place": "none",
+  "title": "Welcome",
+  "overlay": {
+    "kind": "window",
+    "width": 660,
+    "height": 600
+  }
+}

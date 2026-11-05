@@ -1,0 +1,20 @@
+{
+  "layout": "herdr-i18n",
+  "languages": [
+    [
+      "en",
+      "English"
+    ],
+    [
+      "zh-CN",
+      "简体中文"
+    ]
+  ],
+  "repository": "herdrdev/herdr-app",
+  "tag": "v0.1.13",
+  "commit": "93b097f6e29fcb2d90a30dea2f03ce4e5dee7981",
+  "translated": {
+    "en": 0,
+    "zh-CN": 528
+  }
+}

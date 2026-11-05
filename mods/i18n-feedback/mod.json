@@ -1,0 +1,9 @@
+{
+  "place": "none",
+  "title": "Send feedback",
+  "overlay": {
+    "kind": "window",
+    "key": "feedback",
+    "width": 680
+  }
+}

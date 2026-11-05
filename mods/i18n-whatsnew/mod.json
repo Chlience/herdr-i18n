@@ -1,0 +1,9 @@
+{
+  "place": "none",
+  "title": "What's new",
+  "overlay": {
+    "kind": "window",
+    "width": 880,
+    "height": 760
+  }
+}

@@ -1,8 +1,0 @@
-{
-  "place": "none",
-  "title": "设置",
-  "overlay": {
-    "kind": "dialog",
-    "width": 880
-  }
-}

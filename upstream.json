@@ -3,18 +3,63 @@
   "tag": "v0.1.13",
   "commit": "93b097f6e29fcb2d90a30dea2f03ce4e5dee7981",
   "mods": [
-    "workspace-chrome", "workspace-status", "spaces", "agents", "tabs", "pane",
-    "files", "changes", "new-menu", "menu", "machine-add", "worktree", "picker",
-    "prompt", "confirm", "help", "peek"
+    "workspace-chrome",
+    "workspace-status",
+    "spaces",
+    "agents",
+    "tabs",
+    "pane",
+    "files",
+    "changes",
+    "new-menu",
+    "menu",
+    "machine-add",
+    "worktree",
+    "picker",
+    "prompt",
+    "confirm",
+    "help",
+    "peek"
   ],
-  "frames": ["settings", "palette", "welcome", "feedback", "whatsnew"],
+  "frames": [
+    "settings",
+    "palette",
+    "welcome",
+    "feedback",
+    "whatsnew"
+  ],
   "screens": {
-    "settings": { "kind": "dialog", "width": 880 },
-    "palette": { "kind": "popup", "at": "top", "offset": 60, "width": 620, "height": 0.85 },
-    "help": { "kind": "dialog", "width": 640, "height": 520 },
-    "welcome": { "kind": "window", "width": 660, "height": 600 },
-    "feedback": { "kind": "window", "key": "feedback", "width": 680 },
-    "whatsnew": { "kind": "window", "width": 880, "height": 760 }
+    "settings": {
+      "kind": "dialog",
+      "width": 880
+    },
+    "palette": {
+      "kind": "popup",
+      "at": "top",
+      "offset": 60,
+      "width": 620,
+      "height": 0.85
+    },
+    "help": {
+      "kind": "dialog",
+      "width": 640,
+      "height": 520
+    },
+    "welcome": {
+      "kind": "window",
+      "width": 660,
+      "height": 600
+    },
+    "feedback": {
+      "kind": "window",
+      "key": "feedback",
+      "width": 680
+    },
+    "whatsnew": {
+      "kind": "window",
+      "width": 880,
+      "height": 760
+    }
   },
   "keys": {
     "app.settings": "settings",
@@ -22,7 +67,45 @@
     "app.help": "help"
   },
   "patches": [
-    { "file": "settings/main.js", "find": "const LOOKS = {", "replace": "const LOOKS = { \"{layout}\": {title}," },
-    { "file": "palette/main.js", "find": "{ main: \"Herdr\",", "replace": "{ \"{layout}\": {title}, main: \"Herdr\"," }
+    {
+      "file": "settings/main.js",
+      "find": "const LOOKS = {",
+      "replace": "const LOOKS = { \"{layout}\": {title},"
+    },
+    {
+      "file": "settings/main.js",
+      "find": "import { hc, run, theme,",
+      "replace": "import { LANGUAGES, setLanguage } from \"herdr\";\nimport { hc, run, theme,"
+    },
+    {
+      "file": "settings/main.js",
+      "find": "      .child(this.heading(t, \"Layout\"))\n",
+      "replace": "      .child(this.heading(t, \"Language\"))\n      .child(this.languagePicker(t))\n      .child(div().h(18))\n      .child(this.heading(t, \"Layout\"))\n"
+    },
+    {
+      "file": "settings/main.js",
+      "find": "  layoutPicker(t, cx) {\n",
+      "replace": "  languagePicker(t) {\n    const shown = {locale};\n    return h_flex()\n      .w_full()\n      .flex_wrap()\n      .gap(6)\n      .children(\n        LANGUAGES.map(([code, name]) =>\n          div()\n            .id(`st-language-${code}`)\n            .px(12)\n            .py(4)\n            .rounded(6)\n            .border_1()\n            .border_color(code === shown ? t.accent : t.border)\n            .text_size(13)\n            .cursor_pointer()\n            .text_color(code === shown ? t.foreground : t.muted)\n            .hover((s) => s.text_color(t.foreground))\n            .on_click(() => setLanguage(code, \"settings\"))\n            .child(name),\n        ),\n      );\n  }\n\n  layoutPicker(t, cx) {\n"
+    },
+    {
+      "file": "palette/main.js",
+      "find": "{ main: \"Herdr\",",
+      "replace": "{ \"{layout}\": {title}, main: \"Herdr\","
+    },
+    {
+      "file": "palette/main.js",
+      "find": "import { commands, layouts,",
+      "replace": "import { LANGUAGES, setLanguage } from \"herdr\";\nimport { commands, layouts,"
+    },
+    {
+      "file": "palette/main.js",
+      "find": "  const named = new Set(NAMED.map(([n]) => n));\n",
+      "replace": "  for (const [code, name] of LANGUAGES) {\n    list.push({ name: \"i18n.language\", args: { code }, group: \"App\", title: `Language: ${name}`, words: `language locale ${code}` });\n  }\n  const named = new Set(NAMED.map(([n]) => n));\n"
+    },
+    {
+      "file": "palette/main.js",
+      "find": "    this.close();\n    if (e.name === \"mod.clone\") {\n",
+      "replace": "    if (e.name === \"i18n.language\") {\n      setLanguage(e.args.code, \"palette\").then(() => this.close());\n      return;\n    }\n    this.close();\n    if (e.name === \"mod.clone\") {\n"
+    }
   ]
 }

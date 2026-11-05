@@ -11,7 +11,8 @@
     "n=0; for p in \"$1\"/* \"$1\"/.[!.]* \"$1\"/..?*; do [ -e \"$p\" ] || [ -L \"$p\" ] || continue; name=${p##*/}; [ \"$name\" = .git ] && continue; if [ -d \"$p\" ]; then kind=d; else kind=f; fi; printf \"%s\\0%s\\0\" \"$kind\" \"$name\"; n=$((n+1)); [ \"$n\" -gt 500 ] && break; done; test -d \"$1\"",
     "printf %s \"$HOME\"",
     "uname; command -v herdr-core || echo \"$HOME/.local/bin/herdr-core\"",
-    "HEAD:${record.slice(at + 1)}"
+    "HEAD:${record.slice(at + 1)}",
+    "Herdr i18n"
   ],
   "include": [
     {

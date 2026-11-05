@@ -1,0 +1,9 @@
+{
+  "layout:herdr-i18n": {
+    "cmd-p": "mod.open:i18n-picker",
+    "cmd-shift-p": "mod.open:i18n-palette",
+    "cmd-,": "mod.open:i18n-settings",
+    "cmd-/": "mod.open:i18n-help",
+    "cmd-shift-/": "mod.open:i18n-help"
+  }
+}

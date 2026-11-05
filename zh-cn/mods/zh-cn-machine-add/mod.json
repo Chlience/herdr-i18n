@@ -1,8 +1,0 @@
-{
-  "place": "none",
-  "title": "添加机器",
-  "overlay": {
-    "kind": "dialog",
-    "width": 560
-  }
-}

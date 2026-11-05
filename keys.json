@@ -1,0 +1,10 @@
+{
+  "layout:herdr-i18n": {
+    "ctrl-?": "mod.open:i18n-help",
+    "ctrl-shift-/": "mod.open:i18n-help",
+    "ctrl-shift-?": "mod.open:i18n-help",
+    "ctrl-shift-k": "mod.open:i18n-picker",
+    "ctrl-shift-p": "mod.open:i18n-palette",
+    "ctrl-,": "mod.open:i18n-settings"
+  }
+}
